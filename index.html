@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tabuada Hero</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">🐣</span>
+        <h1>Tabuada Hero</h1>
+      </div>
+      <div class="hud">
+        <div>Score: <span id="score">0</span></div>
+        <div>Vidas: <span id="lives">3</span></div>
+        <div>Nível: <span id="level">1</span></div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- INTRO / CONFIG -->
+      <section id="intro" class="card">
+        <h2>Bem-vindo!</h2>
+        <p>Ajude o bichinho a atravessar os obstáculos resolvendo contas. Use ← → para andar e ↑ / W / Espaço para pular.</p>
+
+        <label class="field">
+          Seu e-mail:
+          <input id="studentEmail" type="email" placeholder="aluno@escola.com">
+        </label>
+
+        <div class="controls-row">
+          <label class="field">
+            Nível inicial:
+            <select id="startLevel"></select>
+          </label>
+          <label class="field">
+            Contas por nível:
+            <select id="perLevelSelect">
+              <option value="5">5 (teste)</option>
+              <option value="10">10</option>
+              <option value="30">30 (final)</option>
+            </select>
+          </label>
+          <button id="btnStart" class="btn primary">Iniciar Jogo</button>
+        </div>
+
+        <small class="muted">Ao concluir cada nível aparecerá um resumo que você pode enviar ao professor (mailto:).</small>
+      </section>
+
+      <!-- ÁREA DO JOGO -->
+      <section id="gameArea" class="card hidden">
+        <canvas id="gameCanvas" width="820" height="260" aria-label="Área do jogo"></canvas>
+
+        <div class="question-panel">
+          <div class="question" id="questionText">Pergunta</div>
+          <div class="answer-row">
+            <input id="answerInput" type="number" placeholder="Resposta" inputmode="numeric" />
+            <button id="btnSubmit" class="btn">Enviar</button>
+            <button id="btnSkip" class="btn ghost">Pular</button>
+          </div>
+          <div id="feedback" class="feedback"></div>
+        </div>
+
+        <div class="small-instr">Contas por nível: <strong id="perLevelDisplay">5</strong></div>
+      </section>
+
+      <!-- RESUMO / ENVIO -->
+      <section id="summary" class="card hidden">
+        <h2>Resumo do nível</h2>
+        <pre id="summaryText" class="summaryBox">—</pre>
+
+        <form id="emailForm" autocomplete="off">
+          <label class="field">
+            Confirmar seu e-mail:
+            <input id="formStudentEmail" name="Aluno" type="email" required>
+          </label>
+
+          <label class="field">
+            Mensagem (pode editar antes de enviar)
+            <textarea id="formMessage" name="Resumo" rows="8"></textarea>
+          </label>
+
+          <div class="controls-row">
+            <button id="sendMailBtn" class="btn primary" type="submit">Enviar ao professor</button>
+            <button id="closeSummary" class="btn ghost" type="button">Fechar (voltar ao jogo)</button>
+          </div>
+
+          <small class="muted">O e-mail será aberto no cliente de e-mail configurado com destinatário <strong>gabrieli.rizzi.cruz@escola.pr.gov.br</strong>.</small>
+        </form>
+      </section>
+
+      <!-- OVERLAY (pausa / gameover / final) -->
+      <section id="overlay" class="overlay hidden" aria-hidden="true">
+        <div class="overlay-card" role="dialog" aria-modal="true">
+          <h2 id="overlayTitle">Título</h2>
+          <p id="overlayText">Texto</p>
+          <div class="overlay-actions">
+            <button id="overlayContinue" class="btn primary">Continuar</button>
+            <button id="overlayRestart" class="btn">Reiniciar</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Controles: ← → = mover | ↑ / W / Espaço = pular | P = pausar</div>
+      <small class="muted">Design e jogabilidade simples — pronto para testes.</small>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
