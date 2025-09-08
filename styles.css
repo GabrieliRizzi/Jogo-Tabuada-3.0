@@ -29,7 +29,7 @@ body{
 .logo{font-size:28px}
 .brand h1{margin:0;color:var(--accent2)}
 .hud{display:flex;gap:18px;color:var(--muted);font-weight:600}
-.main{padding:18px;display:grid;grid-template-columns:1fr;gap:16px}
+.main{padding:18px;display:grid;gap:16px}
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0.9)); padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(20,20,40,0.03)}
 .field{display:flex;flex-direction:column;gap:6px;margin:8px 0}
 input, textarea, select{padding:10px;border-radius:8px;border:1px solid #e6eef8;font-size:15px}
@@ -39,18 +39,12 @@ input, textarea, select{padding:10px;border-radius:8px;border:1px solid #e6eef8;
 .btn.primary{background:var(--accent2)}
 .hidden{display:none}
 
-/* canvas + question */
-#gameCanvas{width:100%;height:auto;border-radius:8px;border:2px solid #cde;display:block;background:linear-gradient(180deg,#bfe9d8,#e0f7fa)}
+#gameCanvas{width:100%;height:auto;border-radius:8px;border:2px solid #cde;background:linear-gradient(180deg,#bfe9d8,#e0f7fa)}
 .question-panel{display:flex;flex-direction:column;gap:8px;margin-top:10px}
 .question{font-size:20px;font-weight:800;color:#0b3d91}
 .answer-row{display:flex;gap:8px;align-items:center}
 .feedback{min-height:22px;font-weight:700;color:#444}
 .small-instr{margin-top:8px;color:var(--muted)}
-
-/* overlay */
-.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,12,30,0.45);z-index:40}
-.overlay-card{background:var(--card);padding:20px;border-radius:12px;max-width:480px;width:90%;text-align:center}
-.overlay-actions{display:flex;gap:12px;justify-content:center;margin-top:12px}
 
 .summaryBox{background:#fff;padding:10px;border-radius:8px;border:1px solid #eef2ff;height:220px;overflow:auto}
 .footer{padding:12px 18px;border-top:1px solid #eef2ff;background:linear-gradient(180deg,transparent, rgba(255,255,255,0.6))}
