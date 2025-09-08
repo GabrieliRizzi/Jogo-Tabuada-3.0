@@ -24,7 +24,8 @@
       <!-- INTRO / CONFIG -->
       <section id="intro" class="card">
         <h2>Bem-vindo!</h2>
-        <p>Ajude o bichinho a atravessar os obstáculos resolvendo contas. Use ← → para andar e ↑ / W / Espaço para pular.</p>
+        <p>Ajude o bichinho a atravessar os obstáculos resolvendo contas.  
+        Use ← → para andar e ↑ / W / Espaço para pular.</p>
 
         <label class="field">
           Seu e-mail:
@@ -47,12 +48,12 @@
           <button id="btnStart" class="btn primary">Iniciar Jogo</button>
         </div>
 
-        <small class="muted">Ao concluir cada nível aparecerá um resumo que você pode enviar ao professor (mailto:).</small>
+        <small class="muted">Ao concluir cada nível aparecerá um resumo que você pode enviar ao professor.</small>
       </section>
 
       <!-- ÁREA DO JOGO -->
       <section id="gameArea" class="card hidden">
-        <canvas id="gameCanvas" width="820" height="260" aria-label="Área do jogo"></canvas>
+        <canvas id="gameCanvas" width="820" height="260"></canvas>
 
         <div class="question-panel">
           <div class="question" id="questionText">Pergunta</div>
@@ -72,7 +73,7 @@
         <h2>Resumo do nível</h2>
         <pre id="summaryText" class="summaryBox">—</pre>
 
-        <form id="emailForm" autocomplete="off">
+        <form id="emailForm">
           <label class="field">
             Confirmar seu e-mail:
             <input id="formStudentEmail" name="Aluno" type="email" required>
@@ -85,29 +86,17 @@
 
           <div class="controls-row">
             <button id="sendMailBtn" class="btn primary" type="submit">Enviar ao professor</button>
-            <button id="closeSummary" class="btn ghost" type="button">Fechar (voltar ao jogo)</button>
+            <button id="closeSummary" class="btn ghost" type="button">Fechar</button>
           </div>
 
-          <small class="muted">O e-mail será aberto no cliente de e-mail configurado com destinatário <strong>gabrieli.rizzi.cruz@escola.pr.gov.br</strong>.</small>
+          <small class="muted">O e-mail será enviado para <strong>gabrieli.rizzi.cruz@escola.pr.gov.br</strong>.</small>
         </form>
-      </section>
-
-      <!-- OVERLAY (pausa / gameover / final) -->
-      <section id="overlay" class="overlay hidden" aria-hidden="true">
-        <div class="overlay-card" role="dialog" aria-modal="true">
-          <h2 id="overlayTitle">Título</h2>
-          <p id="overlayText">Texto</p>
-          <div class="overlay-actions">
-            <button id="overlayContinue" class="btn primary">Continuar</button>
-            <button id="overlayRestart" class="btn">Reiniciar</button>
-          </div>
-        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div>Controles: ← → = mover | ↑ / W / Espaço = pular | P = pausar</div>
-      <small class="muted">Design e jogabilidade simples — pronto para testes.</small>
+      <div>Controles: ← → = mover | ↑ / W / Espaço = pular</div>
+      <small class="muted">Design simples e lúdico — pronto para testes.</small>
     </footer>
   </div>
 
